@@ -1,7 +1,6 @@
-//Implemente un programa que imprima los n numeros de loa secuencia de fibonacci
+//Implemente un programa que imprima los n numeros de la secuencia de fibonacci
 // 0 + 1 = 1, 1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5… hasta 13 + 21 = 34…
 #include <iostream>
-#include <string>
 
 using namespace std;
 
