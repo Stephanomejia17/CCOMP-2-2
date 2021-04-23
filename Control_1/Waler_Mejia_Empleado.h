@@ -17,12 +17,8 @@ class Empleado{
 
 };
 Empleado::Empleado(){
-    string _nombre;
-    int _edad;
-    _nombre = "";
-    _edad = 0;
-    nombre = _nombre;
-    edad = _edad;
+    nombre = "";
+    edad = 0;
 }
 Empleado::Empleado(string _nombre, int _edad){
     nombre = _nombre;
