@@ -9,7 +9,7 @@ int main(){
     int n[6];
     for(int i = m - 1; i >= 0; i--){
         n[5-i] = arr[i];
-        cout << "Posicion " << x << ": " << n[5-i] << endl;
+        cout << n[5-i] << " ";
         x++;
     }
 }
