@@ -9,29 +9,35 @@
 #include <iostream>
 
 using namespace std;
+int Vector[]={};
+bool Repetido(int num, int i){
+    for(int x=0; x<i; x++){
+        if(num == Vector[x]){
+            return true;
+        }
+    }
+
+    return false;
+}
+void Imprimir(int arr[], int tam){
+    for(int i=0; i<tam;i++){
+        cout << arr[i] << " ";
+    }
+}
 int main(){
-    int vector[20];
-    for(int i = 0; i < 20; i++){
-        cout << "Ingrese un numero entre 10 y 100: "; cin >> vector[i];
-        if(vector[i] < 10 || vector[i] > 100){
-            cout << "El numero ingresado no esta entre 10 y 100\n";
-            break;
+    int i,tam=20, num, arr[20];
+
+    for(i = 0; i < tam; i++){
+        cout << "Introduzca un numero entre 10 y 100: "; cin >> num;
+        if(num < 10 || num > 100){
+            cout << "El numero ingresado no esta entre 10 y 100" << endl; break;
         }
-        else{
-            for(int m =0; m < i; m++){
-                if(vector[i] == vector[m]){
-                    vector[i] = 0;
-                    cout << "El numero ingresado ya se encuentra en el arreglo\n";
-                }
-            }
+        while(Repetido(num, i)){
+            cout << "Numero Repetido" << endl;
+            cout << "Introduzca otro numero entre 10 y 100: "; cin >> num;
         }
+        Vector[i] = num;
     }
-
-
-    for(int i = 0; i<20; i++){
-        cout << vector[i] << " ";
-    }
-
-
+    Imprimir(Vector,20);
     return 0;
 }

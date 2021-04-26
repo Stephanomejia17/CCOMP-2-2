@@ -5,31 +5,38 @@
 #include <iostream>
 
 using namespace std;
-
-int push_back(int arr[]){
-    for(int i = 0; i < 20; i++){
-        cout << "Ingrese un numero entre 10 y 100: "; cin >> arr[i];
-        if(arr[i] < 10 || arr[i] > 100){
-            cout << "El numero ingresado no esta entre 10 y 100\n";
-            break;
-        }
-        else{
-            for(int m =0; m < i; m++){
-                if(arr[i] == arr[m]){
-                    arr[i] = 0;
-                    cout << "El numero ingresado ya se encuentra en el arreglo\n";
-                }
-            }
+int Vector[]={};
+bool Repetido(int num, int i){
+    for(int x=0; x<i; x++){
+        if(num == Vector[x]){
+            return true;
         }
     }
-    for(int i = 0; i<20; i++){
-        cout << arr[i] << " ";
-    }   
+
+    return false;
 }
-
-
+int push_back(int arr[], int pos,int numero){
+    arr[pos] = numero;
+}
+void Imprimir(int arr[], int tam){
+    for(int i=0; i<tam;i++){
+        cout << arr[i] << " ";
+    }
+}
 int main(){
-    int array[5];
-    push_back(array);
+    int i,tam=5, num, arr[5];
+
+    for(i = 0; i < tam; i++){
+        cout << "Introduzca un numero entre 10 y 100: "; cin >> num;
+        if(num < 10 || num > 100){
+            cout << "El numero ingresado no esta entre 10 y 100" << endl; break;
+        }
+        while(Repetido(num, i)){
+            cout << "Numero Repetido" << endl;
+            cout << "Introduzca otro numero entre 10 y 100: "; cin >> num;
+        }
+        push_back(Vector, i, num);
+    }
+    Imprimir(Vector,5);
     return 0;
 }
