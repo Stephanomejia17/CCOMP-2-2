@@ -8,15 +8,23 @@
 
 using namespace std;
 
-void printArray (int matriz[2][2], int indice_i, int indice_f){
-    if(indice_i == indice_f ){
-        cout << "\n";
-    }
-    else{
-        cout <<  matriz[indice_i][indice_f] << " "; printArray(matriz, indice_i, indice_f+1);
+void printArray (int matriz[][2], int i, int f){
+    int ind = i;
+    int fin = f;
+    for(ind; ind <= fin;ind++){ // 
+        while(fin < 2){ // 
+            cout << matriz[ind][fin] << " "; // 
+            printArray(matriz, ind, fin++);
+        }
+        fin = 0;
+        cout << "\n"; // salto de linea
     }
 }
+
 int main(){
+    int indice_i = 0;
+    int indice_f = 0;
+        //  i  j
     int arr[2][2]={{1,2},{3,4}};
-    printArray(arr,2,2);
+    printArray(arr,indice_i,indice_f);
 }
