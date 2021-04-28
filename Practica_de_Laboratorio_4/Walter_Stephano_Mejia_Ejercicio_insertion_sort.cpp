@@ -3,12 +3,12 @@
 using namespace std;
 
 int main(){
-    int numeros[5]={4,2,3,1,5}; //{2,4,3,1,5}
+    int numeros[5]={4,2,3,1,5}; 
     int i, pos, aux;
 
     for(i=0; i<5; i++){
         pos = i;//0
-        aux = numeros[i];//3
+        aux = numeros[i];//4
 
         while((pos>0) && (numeros[pos-1] > aux)){
             numeros[pos] = numeros[pos-1];

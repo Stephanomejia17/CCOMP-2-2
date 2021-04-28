@@ -5,18 +5,30 @@
 #include <iostream>
 
 using namespace std;
-int Palindromo(int arr[], int t){
-    int x = 0, m = t-1;
-    if(arr[0] != arr[m]){
-        cout << "No es Palindromo";
+bool ispal(int arr[], int tam, int i = 0){
+    if(arr[i] != arr[tam-1]){
+        return false;
+    }
+    else if(i >= tam-1){
+        return true;
     }
     else{
-       Palindromo(arr,t-1);
-       x+=1;
+        return true && ispal(arr,--tam,++i);
     }
+}
+void Pal(bool x){
+    if(x){
+        cout << "Es palindromo\n";
+    }
+    else
+        cout << "No es palindromo\n";
 }
 
 int main(){
-    int arreglo[5]={1,2,3,2,1};
-    Palindromo(arreglo,5);
+    int arreglo[5] = {1,2,3,2,1};
+    Pal(ispal(arreglo,5));
+    int arr[6]={1,2,3,3,2,1};
+    Pal(ispal(arr,6));
+    int vector[6]={1,2,3,4,2,1};
+    Pal(ispal(vector, 6));
 }
