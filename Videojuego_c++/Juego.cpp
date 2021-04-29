@@ -1,12 +1,12 @@
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
-//#include <SFML/Audio.hpp>
+#include <SFML/Audio.hpp>
 #include <stdlib.h>
 #include <mmsystem.h>
 
 using namespace std;
-//using namespace sf;
+using namespace sf;
 
 //Numeros asociados a las teclas
 #define ARRIBA 72
@@ -25,9 +25,9 @@ int xc = 30, yc = 15;
 int velocidad=100, h = 1;
 int score = 0;
 
-/*Music musica_fondo;
+Music musica_fondo;
 Music coin;
-Music choque;*/
+Music choque;
 
 
 char tecla;
@@ -150,10 +150,10 @@ void Snake() {
 
 int main() {
 
-    /*if (!musica_fondo.openFromFile("sonido_fondo.wav")) {
+    if (!musica_fondo.openFromFile("sonido_fondo.wav")) {
         return EXIT_FAILURE;
-    }*/
-    //musica_fondo.play();
+    }
+    musica_fondo.play();
     pintar();
     Snake();
     gotoxy(xc, yc);  printf("%c", 4);
