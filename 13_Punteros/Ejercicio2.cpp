@@ -22,7 +22,4 @@ int main(){
     }
     else
         cout << "El numero " << *numPtr << " no es primo" << endl;
-
-
-
 }

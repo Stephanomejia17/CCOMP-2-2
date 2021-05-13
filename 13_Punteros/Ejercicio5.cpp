@@ -10,11 +10,10 @@ int main(){
 
     cout << "Ingrese la cantidad de elementos: "; cin >> tam;
     int arr[tam], *arrPtr, x;
-    arrPtr = &arr[0];
+    arrPtr = arr;
     x = *arrPtr;
     for(int i = 0; i <tam; i++){
-        cout << "Digite el numero en la posicion [" << i << "]: ";
-        cin >> arr[i];
+        cout << "Digite el numero en la posicion [" << i << "]: "; cin >> arr[i];
     }
     for(int i = 0; i < tam;i++){
         if(*arrPtr < x){
@@ -23,8 +22,6 @@ int main(){
         arrPtr++;
     }
     cout << "El menor numero es: "<<x << endl;
-
-
 
     return 0;
 }
