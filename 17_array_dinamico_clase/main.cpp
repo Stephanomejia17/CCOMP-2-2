@@ -30,6 +30,15 @@ int main(){
     da2.remove(1);
     da2.print();
 
+    da2.remove(1);
+    da2.print();
+
+    da2.remove(4);
+    da2.print();
+
+    da2.clear();
+    da2.print();
+
 
 
 

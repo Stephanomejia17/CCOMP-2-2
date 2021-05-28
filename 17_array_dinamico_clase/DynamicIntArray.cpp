@@ -33,61 +33,38 @@ void DynamicIntArray::print() const{
     }
     std::cout << "]" <<std::endl;
 }
-
-void DynamicIntArray::push_back(int elem){
-    //1
-    int *tmp = new int[size+1];
-    //2
-    for(int i = 0; i < size; i ++){
+void DynamicIntArray::resize(int newSize) {
+    int *tmp = new int[newSize];
+    int minSize = (newSize > size) ? size : newSize;
+    for(int i = 0; i < minSize; i++)
         tmp[i] = data[i];
-    }
-    //3
-    tmp[size] = elem;
-    //4
-    size += 1;
-    //5
     delete [] data;
-    //6
+    size = newSize;
     data = tmp;
 }
 
-void DynamicIntArray::insert(int elem, int pos){
-    //1
-    int *tmp = new int[size+1];
-    //2
-    for(int i = 0, j = 0; i < size; i ++, j++){
-        if(j == pos){
-            tmp[pos] = elem;
-            i--;
-        }
-        else{
-            tmp[j] = data[i];
-        }
-    }
-    //3
-    size += 1;
-    //4
-    delete [] data;
-    //5
-    data = tmp;
+void DynamicIntArray::push_back(int elem) {    
+    resize(size+1);
+    data[size-1] = elem;
 }
+
+void DynamicIntArray::insert(int elem, int pos) {
+    resize(size+1);
+    for(int i = size-1; i > pos; i--){
+        data[i] = data[i-1];
+    data[pos] = elem;
+    }
+} 
 
 void DynamicIntArray::remove(int pos){
-    int *tmp = new int[size-1];
-    for(int i = 0, j = 0; j < size; i++, j++){
-        if(pos != j){
-            tmp[i] = data[j];
-        }
-        else{
-            i--; continue;
-        }
-
+    for(int i = pos; i < size-1; i++){
+        data[i] = data[i+1];
     }
-    size -= 1;
-    delete []data;
-    data = tmp;
+    resize(size-1);
 }
-//Implementar un arreglo estatico y arreglo dinamico de la clase point
+void DynamicIntArray::clear(){
+    resize(0);
+}
 DynamicIntArray::~DynamicIntArray(){
     delete[] data;
 }

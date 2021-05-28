@@ -12,10 +12,13 @@ class DynamicIntArray {
 
         int getSize() const;
         void print() const;
+        void resize(int newSize);
+        void resizeIn(int newSize, int elem, int pos);
 
         void push_back(int elem);
         void insert(int elem, int pos);
         void remove(int pos);
+        void clear();
         ~DynamicIntArray();
 };
 
