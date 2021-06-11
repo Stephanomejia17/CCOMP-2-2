@@ -10,7 +10,7 @@ class DynamicArray {
         void resize(int newSize);
     public:
         DynamicArray();
-        DynamicArray(const Vehiculo* arr[], int size);
+        DynamicArray(Vehiculo* arr[], int size);
         DynamicArray(const DynamicArray &o);
 
         int getSize() const;

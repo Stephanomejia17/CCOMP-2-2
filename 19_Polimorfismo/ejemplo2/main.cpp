@@ -12,12 +12,24 @@ void imprimirDatos(Vehiculo *v) {
 
 int main() {
 
-    Carro c("ert-987", 2020, "Sedan");
-    Camion c2("wer-654", 2000, 200);
+    Carro car1("ert-987", 2020, "Sedan");
+    Camion cam1("wer-654", 2018, 200);
+    Carro car2("ert-987", 2020, "Sedan");
+    Camion cam2("wer-654", 2019, 200);
+    Carro car3("ert-987", 2020, "Sedan");
+    Camion cam3("wer-654", 2020, 200);
 
     DynamicArray da;
-    da.push_back(&c);
-    da.push_back(&c2);
+    da.push_back(&car1);
+    da.push_back(&cam1);
+
+    da.insert(&car2, 0);
+    da.insert(&car3, 1);
+
+    da.push_back(&cam2);
+    da.push_back(&cam3);
+
+    Carro arr[5];
 
     cout << da.getSize() << endl;
 

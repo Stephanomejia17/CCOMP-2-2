@@ -7,11 +7,11 @@ DynamicArray::DynamicArray() {
 }
 
 //TODO Para el martes 
-DynamicArray::DynamicArray(const Vehiculo* arr[], int size){
+DynamicArray::DynamicArray(Vehiculo* arr[], int size){
     this->size = size;
     data = new Vehiculo*[size];
-/*    for(int i = 0; i < size; i++)
-        data[i] = arr[i];*/
+    for(int i = 0; i < size; i++)
+        data[i] = arr[i];
 }
 
 DynamicArray::DynamicArray(const DynamicArray &o) {

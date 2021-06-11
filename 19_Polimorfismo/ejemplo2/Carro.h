@@ -7,6 +7,7 @@
 class Carro : public Vehiculo {
         std::string tipo;
     public:
+        Carro();
         Carro(const std::string p, const int a, const std::string t) 
                 : Vehiculo(p,a), tipo(t){}
         const std::string getTipo() const {
